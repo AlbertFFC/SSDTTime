@@ -14,7 +14,7 @@ class DSDT:
         self.iasl_url_windows = "https://acpica.org/sites/acpica/files/iasl-win-20180105.zip"
         self.iasl = self.check_iasl()
         if not self.iasl:
-            return None
+            raise Exception("Could not locate or download iasl!")
         self.dsdt       = None
         self.dsdt_raw   = None
         self.dsdt_lines = None
